@@ -1,0 +1,151 @@
+{
+  "properties": [
+    {
+      "id": "prop1",
+      "type": "House",
+      "bedrooms": 3,
+      "price": 750000,
+      "tenure": "Freehold",
+      "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station...",
+      "longDescription": "This beautiful family home offers spacious accommodation throughout, featuring a welcoming entrance hall, large living room with bay window, modern fitted kitchen/dining room with direct access to the garden, and a downstairs cloakroom. The first floor comprises three good-sized bedrooms and a family bathroom. The property benefits from a well-maintained rear garden, off-street parking, and a garage.",
+      "location": "Petts Wood Road, Petts Wood, Orpington BR5",
+      "picture": "/images/properties/prop1/main.jpg",
+      "pictures": [
+        "/images/properties/prop1/main.jpg",
+        "/images/properties/prop1/living.jpg",
+        "/images/properties/prop1/kitchen.jpg",
+        "/images/properties/prop1/bedroom.jpg",
+        "/images/properties/prop1/bathroom.jpg",
+        "/images/properties/prop1/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop1/floorplan.jpg",
+      "added": { "month": "October", "day": 12, "year": 2022 }
+    },
+    {
+      "id": "prop2",
+      "type": "Flat",
+      "bedrooms": 2,
+      "price": 399995,
+      "tenure": "Freehold",
+      "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat...",
+      "longDescription": "A stunning ground floor apartment offering contemporary living at its finest. The property comprises a spacious open-plan living/dining area, high-specification kitchen with integrated appliances, two double bedrooms (master with en-suite), and a modern family bathroom. Additional benefits include a private garden, allocated parking, and a share of freehold.",
+      "location": "Crofton Road Orpington BR6",
+      "picture": "/images/properties/prop2/main.jpg",
+      "pictures": [
+        "/images/properties/prop2/main.jpg",
+        "/images/properties/prop2/living.jpg",
+        "/images/properties/prop2/kitchen.jpg",
+        "/images/properties/prop2/bedroom.jpg",
+        "/images/properties/prop2/bathroom.jpg",
+        "/images/properties/prop2/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop2/floorplan.jpg",
+      "added": { "month": "September", "day": 14, "year": 2022 }
+    },
+    {
+      "id": "prop3",
+      "type": "House",
+      "bedrooms": 5,
+      "price": 1200000,
+      "tenure": "Freehold",
+      "description": "Luxury five bedroom detached home in a sought-after location, with a large garden and swimming pool...",
+      "longDescription": "An impressive detached residence offering exceptional family accommodation. Features include a grand reception hall, three reception rooms, a stunning kitchen/breakfast room, utility room, and a home office. The first floor offers five bedrooms, three with en-suite facilities, and a family bathroom. The property boasts a heated swimming pool, landscaped gardens, and a double garage.",
+      "location": "Sutton Road, Sutton, SM1",
+      "picture": "/images/properties/prop3/main.jpg",
+      "pictures": [
+        "/images/properties/prop3/main.jpg",
+        "/images/properties/prop3/living.jpg",
+        "/images/properties/prop3/kitchen.jpg",
+        "/images/properties/prop3/bedroom.jpg",
+        "/images/properties/prop3/bathroom.jpg",
+        "/images/properties/prop3/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop3/floorplan.jpg",
+      "added": { "month": "November", "day": 5, "year": 2022 }
+    },
+    {
+      "id": "prop4",
+      "type": "Flat",
+      "bedrooms": 1,
+      "price": 250000,
+      "tenure": "Leasehold",
+      "description": "A modern one bedroom flat with great views, perfect for a single professional or couple...",
+      "longDescription": "A stylish one-bedroom apartment situated on the 4th floor of this modern development. The property features an open-plan living/kitchen area with floor-to-ceiling windows, a double bedroom with built-in wardrobes, and a contemporary bathroom. Benefits include a balcony with city views, concierge service, and secure parking.",
+      "location": "Kingston Road, Kingston, KT1",
+      "picture": "/images/properties/prop4/main.jpg",
+      "pictures": [
+        "/images/properties/prop4/main.jpg",
+        "/images/properties/prop4/living.jpg",
+        "/images/properties/prop4/kitchen.jpg",
+        "/images/properties/prop4/bedroom.jpg",
+        "/images/properties/prop4/bathroom.jpg",
+        "/images/properties/prop4/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop4/floorplan.jpg",
+      "added": { "month": "December", "day": 10, "year": 2022 }
+    },
+    {
+      "id": "prop5",
+      "type": "House",
+      "bedrooms": 4,
+      "price": 950000,
+      "tenure": "Freehold",
+      "description": "Beautiful four-bedroom family home with spacious rooms and a large garden...",
+      "longDescription": "A substantial family home offering versatile living accommodation. The ground floor comprises a welcoming hallway, dual-aspect living room, dining room, study, and a modern kitchen/family room. Upstairs features four double bedrooms, with the master having an en-suite, and a family bathroom. The property benefits from a south-facing garden and off-street parking.",
+      "location": "Maidstone Road, Bromley, BR2",
+      "picture": "/images/properties/prop5/main.jpg",
+      "pictures": [
+        "/images/properties/prop5/main.jpg",
+        "/images/properties/prop5/living.jpg",
+        "/images/properties/prop5/kitchen.jpg",
+        "/images/properties/prop5/bedroom.jpg",
+        "/images/properties/prop5/bathroom.jpg",
+        "/images/properties/prop5/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop5/floorplan.jpg",
+      "added": { "month": "January", "day": 18, "year": 2023 }
+    },
+    {
+      "id": "prop6",
+      "type": "Flat",
+      "bedrooms": 3,
+      "price": 650000,
+      "tenure": "Leasehold",
+      "description": "Spacious three-bedroom flat located in a popular area, with parking space and easy access to public transport...",
+      "longDescription": "An exceptional three-bedroom apartment in a prestigious development. The property features a large reception room with dining area, fully fitted kitchen with high-end appliances, three double bedrooms (master with en-suite), and two modern bathrooms. Additional benefits include a private balcony, secure parking, and communal gardens.",
+      "location": "Bromley Road, Catford, SE6",
+      "picture": "/images/properties/prop6/main.jpg",
+      "pictures": [
+        "/images/properties/prop6/main.jpg",
+        "/images/properties/prop6/living.jpg",
+        "/images/properties/prop6/kitchen.jpg",
+        "/images/properties/prop6/bedroom.jpg",
+        "/images/properties/prop6/bathroom.jpg",
+        "/images/properties/prop6/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop6/floorplan.jpg",
+      "added": { "month": "July", "day": 3, "year": 2022 }
+    },
+    {
+      "id": "prop7",
+      "type": "House",
+      "bedrooms": 6,
+      "price": 2000000,
+      "tenure": "Freehold",
+      "description": "Stunning six-bedroom house, located in a prime location, offering panoramic views...",
+      "longDescription": "A magnificent six-bedroom residence offering the ultimate in luxury living. The property features a grand entrance hall, three reception rooms, a state-of-the-art kitchen/breakfast room, home cinema, and gym. The first floor comprises six bedroom suites, all with en-suite facilities. The property enjoys panoramic views, landscaped gardens, and a triple garage.",
+      "location": "Chislehurst Road, Chislehurst, BR7",
+      "picture": "/images/properties/prop7/main.jpg",
+      "pictures": [
+        "/images/properties/prop7/main.jpg",
+        "/images/properties/prop7/living.jpg",
+        "/images/properties/prop7/kitchen.jpg",
+        "/images/properties/prop7/bedroom.jpg",
+        "/images/properties/prop7/bathroom.jpg",
+        "/images/properties/prop7/garden.jpg"
+      ],
+      "floorPlan": "/images/properties/prop7/floorplan.jpg",
+      "added": { "month": "June", "day": 25, "year": 2022 }
+    }
+  ]
+}

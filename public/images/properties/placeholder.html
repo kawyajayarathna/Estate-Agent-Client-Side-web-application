@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Property Image Placeholder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #2C2C2C 0%, #1A1A1A 100%);
+        }
+        .placeholder {
+            width: 800px;
+            height: 600px;
+            background: linear-gradient(45deg, var(--start-color) 0%, var(--end-color) 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #property-type {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #property-details {
+            font-size: 24px;
+        }
+        #property-price {
+            font-size: 30px;
+            margin-top: 10px;
+            color: #C5A572;
+        }
+    </style>
+</head>
+<body>
+    <div class="placeholder">
+        <div>
+            <div id="property-type">Luxury House</div>
+            <div id="property-details">4 Bedrooms • 3 Bathrooms</div>
+            <div id="property-price">£750,000</div>
+        </div>
+    </div>
+</body>
+</html>
