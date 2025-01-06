@@ -5,6 +5,7 @@ import ImageGallery from 'react-image-gallery';
 import 'react-image-gallery/styles/css/image-gallery.css';
 import 'react-tabs/style/react-tabs.css';
 import './PropertyDetails.css';
+const mapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -90,9 +91,10 @@ const PropertyDetails = () => {
               width="100%"
               height="450"
               frameBorder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&q=${encodeURIComponent(property.location)}`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${mapsApiKey}&q=${encodeURIComponent(property.location)}`}
               allowFullScreen
             />
+
           </div>
         </TabPanel>
       </Tabs>
