@@ -11,12 +11,13 @@ import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
 import 'react-datepicker/dist/react-datepicker.css';
 import './SearchPage.css';
 
+// PropertyCard component: Displays individual property info with drag & drop and favorites functionality
 const PropertyCard = ({ property, onAddToFavorites, isFavorite }) => {
   const [{ isDragging }, drag] = useDrag({
-    type: 'property',
-    item: { id: property.id },
+    type: 'property', // Specify the item type for drag-and-drop
+    item: { id: property.id }, // Pass the property ID as the item
     collect: monitor => ({
-      isDragging: !!monitor.isDragging(),
+      isDragging: !!monitor.isDragging(), // Check if the item is being dragged
     }),
   });
 
@@ -50,16 +51,17 @@ const PropertyCard = ({ property, onAddToFavorites, isFavorite }) => {
   );
 };
 
+// FavoritesList component: Displays a list of favorite properties with drag & drop functionality
 const FavoritesList = ({ favorites, onRemoveFromFavorites, onClearFavorites, onAddToFavorites, properties }) => {
   const [{ canDrop, isOver }, drop] = useDrop({
-    accept: 'property',
+    accept: 'property', // Specify the item type to accept
     drop: (item) => {
       const property = properties.find(p => p.id === item.id);
-      if (property) onAddToFavorites(property);
+      if (property) onAddToFavorites(property); // Add the property to favorites
     },
     collect: monitor => ({
-      isOver: monitor.isOver(),
-      canDrop: monitor.canDrop(),
+      isOver: monitor.isOver(), // Check if a property is being dragged over
+      canDrop: monitor.canDrop(), // Check if the property can be dropped
     }),
   });
 
@@ -105,10 +107,11 @@ const FavoritesList = ({ favorites, onRemoveFromFavorites, onClearFavorites, onA
   );
 };
 
+// SearchPage component: Displays a search form and property results with favorites functionality
 const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavorites }) => {
-  const [properties, setProperties] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
-  const [searchCriteria, setSearchCriteria] = useState({
+  const [properties, setProperties] = useState([]); // Store all properties
+  const [filteredProperties, setFilteredProperties] = useState([]); // Store filtered properties
+  const [searchCriteria, setSearchCriteria] = useState({ // Store search criteria
     type: '',
     minPrice: '',
     maxPrice: '',
@@ -127,6 +130,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     { value: 'Flat', label: 'Flat' }
   ];
 
+  // Update filtered properties when the type filter changes
   const handleTypeChange = (selectedOption) => {
     setSearchCriteria({
       ...searchCriteria,
@@ -221,6 +225,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     }
   };
 
+  // Save favorites to localStorage when the favorites array changes
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="search-page">

@@ -9,12 +9,14 @@ import About from './components/About'
 import Contact from './components/Contact'
 import './App.css'
 
+ // Initialize state with favorites from localStorage if available
 function App() {
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('favorites')
     return saved ? JSON.parse(saved) : []
   })
 
+   // Add a property to favorites if not already in the list
   const addToFavorites = (property) => {
     if (!favorites.some(fav => fav.id === property.id)) {
       const newFavorites = [...favorites, property]
@@ -23,12 +25,14 @@ function App() {
     }
   }
 
+   // Remove a property from favorites by its id
   const removeFromFavorites = (propertyId) => {
     const newFavorites = favorites.filter(fav => fav.id !== propertyId)
     setFavorites(newFavorites)
     localStorage.setItem('favorites', JSON.stringify(newFavorites))
   }
 
+   // Clear all favorites from state and localStorage
   const clearFavorites = () => {
     setFavorites([])
     localStorage.removeItem('favorites')

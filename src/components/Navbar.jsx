@@ -1,6 +1,7 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import the Link and useLocation hooks
 import './Navbar.css';
 
+// Create a Navbar component that displays navigation links
 const Navbar = () => {
   const location = useLocation();
 
@@ -29,4 +30,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar; 

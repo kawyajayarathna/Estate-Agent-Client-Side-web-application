@@ -8,10 +8,11 @@ import './PropertyDetails.css';
 const mapsApiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
 
 const PropertyDetails = () => {
-  const { id } = useParams();
-  const [property, setProperty] = useState(null);
-  const [images, setImages] = useState([]);
+  const { id } = useParams();  // Extract property ID from URL parameters
+  const [property, setProperty] = useState(null); // Initialize state with an empty array
+  const [images, setImages] = useState([]); //Store the property images for gallery
 
+  // Fetch property data from the server
   useEffect(() => {
     fetch('/data/properties.json')
       .then(response => response.json())
@@ -29,8 +30,9 @@ const PropertyDetails = () => {
         }
       })
       .catch(error => console.error('Error loading property:', error));
-  }, [id]);
+  }, [id]); // Fetch data when the component mounts and when the ID changes
 
+  // Display a loading message while fetching data
   if (!property) {
     return <div className="loading">Loading...</div>;
   }
@@ -61,7 +63,7 @@ const PropertyDetails = () => {
         </div>
         <div className="detail-item">
           <span className="label">Added</span>
-          <span className="value">{`${property.added.day} ${property.added.month} ${property.added.year}`}</span>
+          <span className="value">{`${property.added.day} ${property.added.month} ${property.added.year}`}</span> // Display the date the property was added
         </div>
       </div>
 
@@ -78,7 +80,7 @@ const PropertyDetails = () => {
           </div>
         </TabPanel>
 
-        <TabPanel>
+        <TabPanel> 
           <div className="floorplan-content">
             <img src={property.floorPlan} alt="Floor Plan" />
           </div>
@@ -91,7 +93,7 @@ const PropertyDetails = () => {
               width="100%"
               height="450"
               frameBorder="0"
-              src={`https://www.google.com/maps/embed/v1/place?key=${mapsApiKey}&q=${encodeURIComponent(property.location)}`}
+              src={`https://www.google.com/maps/embed/v1/place?key=${mapsApiKey}&q=${encodeURIComponent(property.location)}`} // Embed Google Maps with the property location
               allowFullScreen
             />
 

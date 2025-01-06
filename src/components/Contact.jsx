@@ -10,6 +10,7 @@ const Contact = () => {
     message: ''
   });
 
+  // Handle form input changes
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -18,6 +19,7 @@ const Contact = () => {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -31,6 +33,7 @@ const Contact = () => {
     });
   };
 
+  // Render the contact form
   return (
     <div className="contact-container">
       <div className="contact-content">

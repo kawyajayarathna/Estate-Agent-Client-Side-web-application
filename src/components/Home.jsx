@@ -1,7 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'; 
+import { Link } from 'react-router-dom'; 
 import './Home.css';
 
+// Create a Home component: a landing page for the application
 const Home = () => {
   return (
     <div className="home-container">
