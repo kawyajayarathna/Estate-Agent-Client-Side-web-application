@@ -63,7 +63,7 @@ const PropertyDetails = () => {
         </div>
         <div className="detail-item">
           <span className="label">Added</span>
-          <span className="value">{`${property.added.day} ${property.added.month} ${property.added.year}`}</span> // Display the date the property was added
+          <span className="value">{`${property.added.day} ${property.added.month} ${property.added.year}`}</span> 
         </div>
       </div>
 
