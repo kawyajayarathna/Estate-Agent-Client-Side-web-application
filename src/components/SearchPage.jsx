@@ -249,11 +249,11 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                   }),
                   singleValue: (base) => ({
                     ...base,
-                    color: 'white'
+                    color: 'black'
                   }),
                   input: (base) => ({
                     ...base,
-                    color: 'white'
+                    color: 'black'
                   }),
                   placeholder: (base) => ({
                     ...base,
