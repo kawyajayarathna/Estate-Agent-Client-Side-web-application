@@ -60,6 +60,7 @@
 }
 
 .form-group label {
+  background-color: #132F4C;
   color: var(--color-primary);
   font-family: var(--font-secondary);
   font-weight: 500;
