@@ -233,7 +233,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
           <h2 style={{ color: 'var(--color-primary)' }}>Find Your Dream Property</h2>
           <div className="form-grid">
             <div className="form-group">
-              <label style={{ color: 'white' }}>Property Type</label>
+              <label style={{ color: 'black' }}>Property Type</label>
               <Select
                 options={typeOptions}
                 value={typeOptions.find(option => option.value === searchCriteria.type)}
@@ -245,7 +245,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                     ...base,
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     borderColor: 'rgba(255, 255, 255, 0.2)',
-                    color: 'white'
+                    color: 'white',
                   }),
                   singleValue: (base) => ({
                     ...base,
@@ -271,7 +271,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                   placeholder="Min Price"
                   value={searchCriteria.minPrice}
                   onChange={(e) => setSearchCriteria({...searchCriteria, minPrice: e.target.value})}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
                 <span style={{ color: 'black' }}>-</span>
                 <input
@@ -279,7 +279,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                   placeholder="Max Price"
                   value={searchCriteria.maxPrice}
                   onChange={(e) => setSearchCriteria({...searchCriteria, maxPrice: e.target.value})}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
               </div>
             </div>
@@ -386,7 +386,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
           ) : (
             <>
               <div className="property-results">
-                <h3 style={{ color: 'white' }}>Properties</h3>
+                <h3 style={{ color: 'black' }}>Properties</h3>
                 <div className="property-grid">
                   {filteredProperties.map(property => (
                     <PropertyCard
