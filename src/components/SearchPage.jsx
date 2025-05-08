@@ -264,7 +264,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
             </div>
 
             <div className="form-group">
-              <label style={{ color: 'white' }}>Price Range</label>
+              <label style={{ color: 'black' }}>Price Range</label>
               <div className="price-range">
                 <input
                   type="number"
@@ -273,7 +273,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                   onChange={(e) => setSearchCriteria({...searchCriteria, minPrice: e.target.value})}
                   style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
-                <span style={{ color: 'white' }}>-</span>
+                <span style={{ color: 'black' }}>-</span>
                 <input
                   type="number"
                   placeholder="Max Price"
@@ -285,28 +285,28 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
             </div>
 
             <div className="form-group">
-              <label style={{ color: 'white' }}>Bedrooms</label>
+              <label style={{ color: 'black' }}>Bedrooms</label>
               <div className="bedroom-inputs">
                 <input
                   type="number"
                   placeholder="Min Bedrooms"
                   value={searchCriteria.minBedrooms}
                   onChange={(e) => setSearchCriteria({...searchCriteria, minBedrooms: e.target.value})}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
-                <span style={{ color: 'white' }}>-</span>
+                <span style={{ color: 'black' }}>-</span>
                 <input
                   type="number"
                   placeholder="Max Bedrooms"
                   value={searchCriteria.maxBedrooms}
                   onChange={(e) => setSearchCriteria({...searchCriteria, maxBedrooms: e.target.value})}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
               </div>
             </div>
 
             <div className="form-group">
-              <label style={{ color: 'white' }}>Date Added</label>
+              <label style={{ color: 'black' }}>Date Added</label>
               <div className="date-range">
                 <DatePicker
                   selected={searchCriteria.dateAddedAfter}
@@ -324,9 +324,9 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                       }
                     }
                   ]}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
-                <span style={{ color: 'white' }}>-</span>
+                <span style={{ color: 'black' }}>-</span>
                 <DatePicker
                   selected={searchCriteria.dateAddedBefore}
                   onChange={(date) => setSearchCriteria({...searchCriteria, dateAddedBefore: date})}
@@ -343,19 +343,19 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                       }
                     }
                   ]}
-                  style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                  style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
                 />
               </div>
             </div>
 
             <div className="form-group">
-              <label style={{ color: 'white' }}>Postcode Area</label>
+              <label style={{ color: 'black' }}>Postcode Area</label>
               <input
                 type="text"
                 placeholder="e.g. BR1, NW1"
                 value={searchCriteria.postcode}
                 onChange={(e) => setSearchCriteria({...searchCriteria, postcode: e.target.value})}
-                style={{ color: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
               />
             </div>
           </div>
@@ -365,7 +365,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
             onClick={handleSearch}
             style={{
               backgroundColor: 'var(--color-primary)',
-              color: 'white',
+              color: 'black',
               padding: '0.75rem 2rem',
               border: 'none',
               borderRadius: '4px',
