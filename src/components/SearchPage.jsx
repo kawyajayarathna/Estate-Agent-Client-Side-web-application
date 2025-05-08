@@ -355,7 +355,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                 placeholder="e.g. BR1, NW1"
                 value={searchCriteria.postcode}
                 onChange={(e) => setSearchCriteria({...searchCriteria, postcode: e.target.value})}
-                style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
+                style={{ color: 'black', backgroundColor: 'rgba(0, 255, 255, 0.1)' }}
               />
             </div>
           </div>
