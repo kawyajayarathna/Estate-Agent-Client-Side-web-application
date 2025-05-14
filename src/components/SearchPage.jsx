@@ -246,6 +246,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     borderColor: 'rgba(255, 255, 255, 0.2)',
                     color: 'black',
+                    boxshadow: 'none'
                   }),
                   singleValue: (base) => ({
                     ...base,
