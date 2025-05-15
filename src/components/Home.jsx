@@ -1,5 +1,4 @@
-import React from 'react'; 
-import { Link } from 'react-router-dom'; 
+import React from 'react';
 import './Home.css';
 
 // Create a Home component: a landing page for the application
@@ -9,7 +8,7 @@ const Home = () => {
       <div className="hero-section">
         <h1>Welcome to Refined Residences</h1>
         <p className="subtitle">Where Luxury Meets Lifestyle</p>
-        <Link to="/properties" className="cta-button">Explore Properties</Link>
+        <a href="#properties" className="cta-button">Explore Properties</a>
       </div>
 
       <div className="features-section">
@@ -41,8 +40,8 @@ const Home = () => {
             luxury properties represents the pinnacle of architectural excellence and sophisticated living.
           </p>
           <div className="welcome-buttons">
-            <Link to="/properties" className="welcome-button">View Properties</Link>
-            <Link to="/contact" className="welcome-button outline">Contact Us</Link>
+            <a href="#properties" className="welcome-button">View Properties</a>
+            <a href="#contact" className="welcome-button outline">Contact Us</a>
           </div>
         </div>
       </div>
