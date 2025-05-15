@@ -384,7 +384,7 @@
 }
 
 .react-select-container .react-select__single-value {
-  color: white;
+  color: black;
 }
 
 .react-select-container .react-select__menu {
@@ -393,7 +393,7 @@
 }
 
 .react-select-container .react-select__option {
-  color: white;
+  color: black;
   background-color: transparent;
 }
 
