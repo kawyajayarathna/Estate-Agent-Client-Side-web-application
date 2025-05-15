@@ -351,19 +351,10 @@
   margin-bottom: 0.25rem;
 }
 
-.price-input,
-.bedroom-input,
-.postcode-input {
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 0.75rem;
-  border-radius: 4px;
-  width: 100%;
-  font-size: 0.9rem;
-}
+
 
 .price-input::placeholder,
+.prope
 .bedroom-input::placeholder,
 .postcode-input::placeholder {
   color: rgba(255, 255, 255, 0.6);
@@ -389,11 +380,11 @@
 }
 
 .react-select-container .react-select__value-container {
-  color: white;
+  color: black;
 }
 
 .react-select-container .react-select__single-value {
-  color: white;
+  color: black;
 }
 
 .react-select-container .react-select__menu {
@@ -402,7 +393,7 @@
 }
 
 .react-select-container .react-select__option {
-  color: white;
+  color: black;
   background-color: transparent;
 }
 
