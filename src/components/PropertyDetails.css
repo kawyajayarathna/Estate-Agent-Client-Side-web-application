@@ -185,11 +185,9 @@
   color: var(--color-primary);
 }
 
-.floorplan-content {
+.floor-plan-content img {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-.floor-plan-content img {
   width: 100%;
   height: auto;
   border-radius: 8px;
