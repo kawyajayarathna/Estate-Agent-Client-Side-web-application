@@ -1,22 +1,20 @@
-import { useState, useEffect } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './components/Home'
-import SearchPage from './components/SearchPage'
-import PropertyDetails from './components/PropertyDetails'
+  import SearchPage from './components/SearchPage'
 import About from './components/About'
 import Contact from './components/Contact'
 import './App.css'
 
- // Initialize state with favorites from localStorage if available
+// Initialize state with favorites from localStorage if available
 function App() {
   const [favorites, setFavorites] = useState(() => {
     const saved = localStorage.getItem('favorites')
     return saved ? JSON.parse(saved) : []
   })
 
-   // Add a property to favorites if not already in the list
+  // Add a property to favorites if not already in the list
   const addToFavorites = (property) => {
     if (!favorites.some(fav => fav.id === property.id)) {
       const newFavorites = [...favorites, property]
@@ -25,14 +23,14 @@ function App() {
     }
   }
 
-   // Remove a property from favorites by its id
+  // Remove a property from favorites by its id
   const removeFromFavorites = (propertyId) => {
     const newFavorites = favorites.filter(fav => fav.id !== propertyId)
     setFavorites(newFavorites)
     localStorage.setItem('favorites', JSON.stringify(newFavorites))
   }
 
-   // Clear all favorites from state and localStorage
+  // Clear all favorites from state and localStorage
   const clearFavorites = () => {
     setFavorites([])
     localStorage.removeItem('favorites')
@@ -42,36 +40,28 @@ function App() {
     <div className="app">
       <Navbar />
       <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route 
-            path="/properties" 
-            element={
-              <SearchPage 
-                favorites={favorites}
-                addToFavorites={addToFavorites}
-                removeFromFavorites={removeFromFavorites}
-                clearFavorites={clearFavorites}
-              />
-            } 
+        <section id="home">
+          <Home />
+        </section>
+        <section id="properties">
+          <SearchPage
+            favorites={favorites}
+            addToFavorites={addToFavorites}
+            removeFromFavorites={removeFromFavorites}
+            clearFavorites={clearFavorites}
           />
-          <Route 
-            path="/property/:id" 
-            element={
-              <PropertyDetails 
-                favorites={favorites}
-                addToFavorites={addToFavorites}
-                removeFromFavorites={removeFromFavorites}
-              />
-            } 
-          />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
       </main>
       <Footer />
     </div>
   )
 }
+
 
 export default App

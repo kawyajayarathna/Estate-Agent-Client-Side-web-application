@@ -12,6 +12,9 @@
   --font-primary: 'Playfair Display', serif;
   --font-secondary: 'Montserrat', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 * {
   margin: 0;
