@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
@@ -130,6 +130,9 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     { value: 'Flat', label: 'Flat' }
   ];
 
+  // Ref for scrolling to results
+  const resultsRef = useRef(null);
+
   // Update filtered properties when the type filter changes
   const handleTypeChange = (selectedOption) => {
     setSearchCriteria({
@@ -204,6 +207,13 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     }
 
     setFilteredProperties(filtered);
+
+    // Scroll to results section after filtering
+    setTimeout(() => {
+      if (resultsRef.current) {
+        resultsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const getMonthNumber = (monthName) => {
@@ -379,7 +389,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
           </button>
         </div>
 
-        <div className="results-container">
+        <div className="results-container" ref={resultsRef}>
           {loading ? (
             <div className="loading">Loading properties...</div>
           ) : error ? (
