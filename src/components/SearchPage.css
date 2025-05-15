@@ -393,7 +393,7 @@
 }
 
 .react-select-container .react-select__option {
-  color: black;
+  color: white;
   background-color: transparent;
 }
 
@@ -407,7 +407,7 @@
 }
 
 .react-select-container .react-select__input-container {
-  color: white;
+  color: black;
 }
 
 .react-select-container .react-select__placeholder {
