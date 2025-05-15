@@ -200,6 +200,10 @@
   height: auto;
   border-radius: 8px;
 }
+.floorplan-content {
+  padding-left: 3rem; /* Increase this value for more right shift */
+  padding-right: 2rem;
+}
 
 .location-content {
   height: 400px;
