@@ -4,6 +4,17 @@
   padding: 2rem;
   color: white;
 }
+/* Add to PropertyDetails.css */
+.back-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.back-arrow:hover {
+  color: var(--color-accent);
+}
 
 .property-header {
   margin-bottom: 2rem;

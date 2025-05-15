@@ -38,21 +38,7 @@ const PropertyDetails = () => {
 
   return (
     <div className="property-details">
-      {/* Back Arrow Button */}
-      <button
-        className="back-arrow"
-        onClick={() => navigate('/#properties')}
-        style={{
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          fontSize: '2rem',
-          marginBottom: '1rem'
-        }}
-        aria-label="Back to Properties"
-      >
-        &#8592; Back to Properties
-      </button>
+      
 
       <div className="property-gallery">
         <ImageGallery
