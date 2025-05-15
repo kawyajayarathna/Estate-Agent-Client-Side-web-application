@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import DatePicker from 'react-datepicker';
 import { DndProvider } from 'react-dnd';
@@ -7,17 +8,16 @@ import { useDrag, useDrop } from 'react-dnd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as faStarSolid } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarRegular } from '@fortawesome/free-regular-svg-icons';
-import PropertyDetails from './PropertyDetails';
 import 'react-datepicker/dist/react-datepicker.css';
 import './SearchPage.css';
 
-// PropertyCard component
-const PropertyCard = ({ property, onAddToFavorites, isFavorite, onViewDetails }) => {
+// PropertyCard component: Displays individual property info with drag & drop and favorites functionality
+const PropertyCard = ({ property, onAddToFavorites, isFavorite }) => {
   const [{ isDragging }, drag] = useDrag({
-    type: 'property',
-    item: { id: property.id },
+    type: 'property', // Specify the item type for drag-and-drop
+    item: { id: property.id }, // Pass the property ID as the item
     collect: monitor => ({
-      isDragging: !!monitor.isDragging(),
+      isDragging: !!monitor.isDragging(), // Check if the item is being dragged
     }),
   });
 
@@ -32,9 +32,9 @@ const PropertyCard = ({ property, onAddToFavorites, isFavorite, onViewDetails })
         <div className="price">£{property.price.toLocaleString()}</div>
         <div className="description">{property.description}</div>
         <div className="card-actions">
-          <button className="view-details" onClick={() => onViewDetails(property)}>
+          <Link to={`/property/${property.id}`} className="view-details">
             View Details
-          </button>
+          </Link>
           <button
             className={`favorite-button ${isFavorite ? 'active' : ''}`}
             onClick={() => onAddToFavorites(property)}
@@ -51,17 +51,17 @@ const PropertyCard = ({ property, onAddToFavorites, isFavorite, onViewDetails })
   );
 };
 
-// FavoritesList component
+// FavoritesList component: Displays a list of favorite properties with drag & drop functionality
 const FavoritesList = ({ favorites, onRemoveFromFavorites, onClearFavorites, onAddToFavorites, properties }) => {
   const [{ canDrop, isOver }, drop] = useDrop({
-    accept: 'property',
+    accept: 'property', // Specify the item type to accept
     drop: (item) => {
       const property = properties.find(p => p.id === item.id);
-      if (property) onAddToFavorites(property);
+      if (property) onAddToFavorites(property); // Add the property to favorites
     },
     collect: monitor => ({
-      isOver: monitor.isOver(),
-      canDrop: monitor.canDrop(),
+      isOver: monitor.isOver(), // Check if a property is being dragged over
+      canDrop: monitor.canDrop(), // Check if the property can be dropped
     }),
   });
 
@@ -107,11 +107,11 @@ const FavoritesList = ({ favorites, onRemoveFromFavorites, onClearFavorites, onA
   );
 };
 
-// SearchPage component
+// SearchPage component: Displays a search form and property results with favorites functionality
 const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavorites }) => {
-  const [properties, setProperties] = useState([]);
-  const [filteredProperties, setFilteredProperties] = useState([]);
-  const [searchCriteria, setSearchCriteria] = useState({
+  const [properties, setProperties] = useState([]); // Store all properties
+  const [filteredProperties, setFilteredProperties] = useState([]); // Store filtered properties
+  const [searchCriteria, setSearchCriteria] = useState({ // Store search criteria
     type: '',
     minPrice: '',
     maxPrice: '',
@@ -123,7 +123,6 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [selectedProperty, setSelectedProperty] = useState(null);
 
   const typeOptions = [
     { value: 'Any', label: 'Any Type' },
@@ -131,11 +130,14 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     { value: 'Flat', label: 'Flat' }
   ];
 
+  // Update filtered properties when the type filter changes
   const handleTypeChange = (selectedOption) => {
     setSearchCriteria({
       ...searchCriteria,
       type: selectedOption.value
-        });
+    });
+    
+    // Filter properties based on type
     let filtered = properties;
     if (selectedOption.value !== 'Any') {
       filtered = properties.filter(property => property.type === selectedOption.value);
@@ -159,38 +161,50 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
   }, []);
 
   const handleSearch = () => {
-      let filtered = properties;
+    let filtered = properties;
+
+    // Filter by type
     if (searchCriteria.type && searchCriteria.type !== 'Any') {
       filtered = filtered.filter(property => property.type === searchCriteria.type);
-      }
+    }
+
+    // Filter by price range
     if (searchCriteria.minPrice) {
       filtered = filtered.filter(property => property.price >= parseInt(searchCriteria.minPrice));
     }
     if (searchCriteria.maxPrice) {
       filtered = filtered.filter(property => property.price <= parseInt(searchCriteria.maxPrice));
-      }
+    }
+
+    // Filter by bedrooms
     if (searchCriteria.minBedrooms) {
       filtered = filtered.filter(property => property.bedrooms >= parseInt(searchCriteria.minBedrooms));
     }
     if (searchCriteria.maxBedrooms) {
       filtered = filtered.filter(property => property.bedrooms <= parseInt(searchCriteria.maxBedrooms));
-      }
+    }
+
+    // Filter by date added
     if (searchCriteria.dateAddedAfter) {
       filtered = filtered.filter(property => {
         const propDate = new Date(property.added.year, getMonthNumber(property.added.month), property.added.day);
         return propDate >= searchCriteria.dateAddedAfter;
       });
-      }
+    }
+
     if (searchCriteria.dateAddedBefore) {
       filtered = filtered.filter(property => {
         const propDate = new Date(property.added.year, getMonthNumber(property.added.month), property.added.day);
         return propDate <= searchCriteria.dateAddedBefore;
       });
-      }
+    }
+
+    // Filter by postcode
     if (searchCriteria.postcode) {
       const postcodeRegex = new RegExp(searchCriteria.postcode.toUpperCase());
       filtered = filtered.filter(prop => postcodeRegex.test(prop.location.toUpperCase()));
-    }     }
+    }
+
     setFilteredProperties(filtered);
   };
 
@@ -211,9 +225,10 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     }
   };
 
+  // Save favorites to localStorage when the favorites array changes
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="search-page">   
+      <div className="search-page">
         <div className="search-form">
           <h2 style={{ color: 'var(--color-primary)' }}>Find Your Dream Property</h2>
           <div className="form-grid">
@@ -233,12 +248,11 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                     color: 'black',
                     boxshadow: 'none',
                     '&:hover': {
-                      borderColor: 'gold'
+                      borderColor: 'rgba(255, 255, 255, 0.3)'
                     }
                   }),
                   singleValue: (base) => ({
                     ...base,
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     color: 'black'
                   }),
                   input: (base) => ({
@@ -377,26 +391,6 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
             <>
               <div className="property-results">
                 <h3 style={{ color: 'black' }}>Properties</h3>
-                {/* Show property details inline if selected */}
-                {selectedProperty && (
-                  <div style={{ marginBottom: '2rem', background: '#fff', borderRadius: '8px', boxShadow: '0 2px 8px rgba(0,0,0,0.08)', padding: '1.5rem' }}>
-                    <button
-                      style={{
-                        float: 'right',
-                        background: 'none',
-                        border: 'none',
-                        fontSize: '1.5rem',
-                        cursor: 'pointer',
-                        color: '#888'
-                      }}
-                      onClick={() => setSelectedProperty(null)}
-                      aria-label="Close details"
-                    >
-                      &times;
-                    </button>
-                    <PropertyDetails property={selectedProperty} />
-                  </div>
-                )}
                 <div className="property-grid">
                   {filteredProperties.map(property => (
                     <PropertyCard
@@ -404,7 +398,6 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                       property={property}
                       isFavorite={favorites.some(fav => fav.id === property.id)}
                       onAddToFavorites={() => handleToggleFavorite(property)}
-                      onViewDetails={setSelectedProperty}
                     />
                   ))}
                 </div>
@@ -424,6 +417,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
         </div>
       </div>
     </DndProvider>
-    );
+  );
+};
 
-  export default SearchPage;
+export default SearchPage;
