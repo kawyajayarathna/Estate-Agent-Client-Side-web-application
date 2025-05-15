@@ -1,11 +1,12 @@
 .contact-container {
-  min-height: 60vh;
+  min-height: calc(100vh - 64px);
   background-color: var(--color-secondary);
   background-image: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 100%);
   padding: 4rem 2rem;
 }
 
 .contact-content {
+  max-height: fit-content;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
