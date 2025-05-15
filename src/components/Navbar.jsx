@@ -1,33 +1,20 @@
-import { Link, useLocation } from 'react-router-dom'; // Import the Link and useLocation hooks
+import React from 'react';
 import './Navbar.css';
 
-// Create a Navbar component that displays navigation links
-const Navbar = () => {
-  const location = useLocation();
-
-  return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="logo">
-          Refined Residences
-        </Link>
-        <div className="nav-links">
-          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>
-            Home
-          </Link>
-          <Link to="/properties" className={`nav-link ${location.pathname === '/properties' ? 'active' : ''}`}>
-            Properties
-          </Link>
-          <Link to="/about" className={`nav-link ${location.pathname === '/about' ? 'active' : ''}`}>
-            About
-          </Link>
-          <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}>
-            Contact
-          </Link>
-        </div>
+const Navbar = () => (
+  <nav className="navbar">
+    <div className="navbar-container">
+      <a href="#home" className="logo">
+        Refined Residences
+      </a>
+      <div className="nav-links">
+        <a href="#home" className="nav-link">Home</a>
+        <a href="#properties" className="nav-link">Properties</a>
+        <a href="#about" className="nav-link">About</a>
+        <a href="#contact" className="nav-link">Contact</a>
       </div>
-    </nav>
-  );
-};
+    </div>
+  </nav>
+);
 
-export default Navbar; 
+export default Navbar;
