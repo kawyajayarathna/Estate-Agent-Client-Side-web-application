@@ -210,9 +210,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
       addToFavorites(property);
     }
   };
-  const handleViewDetails = (property) => {
-    setSelectedProperty(property);
-  };  
+
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="search-page">   
