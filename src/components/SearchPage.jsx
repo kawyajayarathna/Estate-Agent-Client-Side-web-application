@@ -246,10 +246,14 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     borderColor: 'rgba(255, 255, 255, 0.2)',
                     color: 'black',
-                    boxshadow: 'none'
+                    boxshadow: 'none',
+                    '&:hover': {
+                      borderColor: 'gold'
+                    }
                   }),
                   singleValue: (base) => ({
                     ...base,
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     color: 'black'
                   }),
                   input: (base) => ({
@@ -356,7 +360,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                 placeholder="e.g. BR1, NW1"
                 value={searchCriteria.postcode}
                 onChange={(e) => setSearchCriteria({...searchCriteria, postcode: e.target.value})}
-                style={{ color: 'black', backgroundColor: '#132F4C' }}
+                style={{ color: 'black', backgroundColor: 'rgba(255, 255, 255, 0.1)' }}
               />
             </div>
           </div>
