@@ -399,7 +399,7 @@
 
 .react-select-container .react-select__option:hover,
 .react-select-container .react-select__option--is-focused {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--color-accent);
 }
 
 .react-select-container .react-select__option--is-selected {
