@@ -56,6 +56,7 @@
   padding: 2rem;
   background: var(--color-light);
   border-radius: 8px;
+  align-items: start;
 }
 
 .info-section {
@@ -71,7 +72,7 @@
 
 .info-section p {
   color: var(--color-secondary);
-  font-family: var(--font-secondary);
+  font-family: var(--font-secondary)
 }
 
 .contact-form {
