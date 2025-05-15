@@ -130,7 +130,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
     { value: 'House', label: 'House' },
     { value: 'Flat', label: 'Flat' }
   ];
-  
+
   const handleTypeChange = (selectedOption) => {
     setSearchCriteria({
       ...searchCriteria,
