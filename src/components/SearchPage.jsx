@@ -244,7 +244,7 @@ const SearchPage = ({ favorites, addToFavorites, removeFromFavorites, clearFavor
                   control: (base) => ({
                     ...base,
                     backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderColor: 'gold',
                     color: 'black',
                     boxshadow: 'none',
                     '&:hover': {
