@@ -67,7 +67,7 @@ const Contact = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.123456789012!2d-118.12345678901234!3d34.56789012345678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2a12345678901%3A0x1234567890123456!2sRefined%20Residences%20Luxury%20Real%20Estate%20Agency!5e0!3m2!1sen!2sus!4v1234567890123"
+            
             title="Google Map"
           ></iframe>
         </div>
